@@ -11,10 +11,6 @@ p {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.italic {
-    font-style: italic;
-}
-
 .maincolor {
     color: #153846;
 }
@@ -39,4 +35,29 @@ a:hover {
 a:active {
     font-weight: bold;
     text-decoration: none;
+}
+
+.header {
+    background-color: #cce6f0;
+    padding: 20px;
+    text-align: center;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #153846;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: #cce6f0;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.topnav a:hover {
+    background-color: #cce6f0;
+    color: 153846;
 }
