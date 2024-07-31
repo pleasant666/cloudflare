@@ -1,7 +1,10 @@
 body {
     background-color: #3999bf;
-    text-shadow: 0px 1px #ffffff;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.smallfont {
+    font-size: 10px;
 }
 
 a:link {
