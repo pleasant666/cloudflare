@@ -60,6 +60,31 @@ a.clear:active {
     color: #153846;
 }
 
+.column {
+    float: left;
+    width: 50%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+        padding: 0px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .topnav a {
+        float: none;
+        width: 100%;
+    }
+}
+
 .card {
     background-color: #cce6f0;
     padding: 20px;
