@@ -60,9 +60,16 @@ a.clear:active {
     color: #153846;
 }
 
-.column {
+.leftcolumn {
     float: left;
     width: 50%;
+}
+
+.rightcolumn {
+    float: left;
+    width: 50%;
+    background-color: #3999bf;
+    padding-left: 20px;
 }
 
 .row:after {
@@ -72,7 +79,9 @@ a.clear:active {
 }
 
 @media screen and (max-width: 600px) {
-    .column {
+
+    .leftcolumn,
+    .rightcolumn {
         width: 100%;
         padding: 0px;
     }
