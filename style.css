@@ -4,6 +4,7 @@ body {
 
 h1 {
     text-align: left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 p {
@@ -60,4 +61,21 @@ a:active {
 .topnav a:hover {
     background-color: #cce6f0;
     color: 153846;
+}
+
+.card {
+    background-color: #cce6f0;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.footer {
+    background-color: #153846;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.footer p {
+    color: #cce6f0;
 }
