@@ -62,14 +62,21 @@ a.clear:active {
 
 .leftcolumn {
     float: left;
-    width: 50%;
+    width: 49%;
+    /*不要问我为什么是49%不是50%. It just worked.*/
 }
 
 .rightcolumn {
-    float: left;
-    width: 50%;
+    float: right;
+    width: 49%;
     background-color: #3999bf;
-    padding-left: 20px;
+}
+
+.card {
+    background-color: #cce6f0;
+    padding: 20px;
+    margin-top: 20px;
+    color: #153846;
 }
 
 .row:after {
@@ -78,7 +85,7 @@ a.clear:active {
     clear: both;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
 
     .leftcolumn,
     .rightcolumn {
@@ -94,15 +101,8 @@ a.clear:active {
     }
 }
 
-.card {
-    background-color: #cce6f0;
-    padding: 20px;
-    margin-top: 20px;
-    color: #153846;
-}
-
 div.withshadow:hover {
-    box-shadow: 0 0 2px 2px #276882;
+    box-shadow: 0 0 4px 4px #276882;
 }
 
 .footer {
