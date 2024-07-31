@@ -1,0 +1,42 @@
+body {
+    background-color: #3999bf;
+}
+
+h1 {
+    text-align: left;
+}
+
+p {
+    text-align: justify;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.maincolor {
+    color: #153846;
+}
+
+.withshadow {
+    text-shadow: 0px 1px #ffffff;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:active {
+    font-weight: bold;
+    text-decoration: none;
+}
