@@ -4,18 +4,6 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-h1 {
-    text-align: left;
-}
-
-p {
-    text-align: justify;
-}
-
-.maincolor {
-    color: #153846;
-}
-
 a:link {
     text-decoration: none;
 }
