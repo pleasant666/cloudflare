@@ -1,23 +1,19 @@
 body {
     background-color: #3999bf;
+    text-shadow: 0px 1px #ffffff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 h1 {
     text-align: left;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 p {
     text-align: justify;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .maincolor {
     color: #153846;
-}
-
-.withshadow {
-    text-shadow: 0px 1px #ffffff;
 }
 
 a:link {
