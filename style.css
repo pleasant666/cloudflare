@@ -56,7 +56,7 @@ ul {
 
 li {
     float: left;
-    border-right:1px solid #cce6f0;
+    border-right: 1px solid #cce6f0;
 }
 
 li:last-child {
@@ -106,7 +106,7 @@ li a:hover:not(.active) {
 }
 
 .card code {
-    border-radius: 8px!important;
+    border-radius: 8px !important;
     padding: 4px;
     font-family: 'Courier New', Courier, monospace;
     background-color: #153846;
@@ -114,8 +114,8 @@ li a:hover:not(.active) {
 }
 
 .card pre {
-    border-radius: 16px!important;
-    padding:8px;
+    border-radius: 16px !important;
+    padding: 8px;
     font-family: 'Courier New', Courier, monospace;
     background-color: #153846;
     color: #cce6f0;
