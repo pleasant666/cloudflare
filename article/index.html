@@ -25,9 +25,9 @@
 		<p>欢迎来到 <b>2/13</b>，一个致力于资源分享 & 教程的小站！</p>
 	</div>
 	<div class="topnav">
-        <a href="https://www.153846.top">主页</a>
-        <a href="tools">小工具</a>
-        <a href="aboutus">关于我们</a>
+		<a href="https://www.153846.top">主页</a>
+		<a href="tools">小工具</a>
+		<a href="aboutus">关于我们</a>
 	</div>
 	<div class="row">
 		<script>
@@ -35,7 +35,7 @@
 			const urlParam = new URLSearchParams(window.location.search);
 			const articleId = urlParam.get('p');
 
-			if (articleId){
+			if (articleId) {
 				const mdFileUrl = `https://www.153846.top/article/p/${artivleId}.md`;
 				fetch(mdFileUrl)
 					.then(response => response.text())
@@ -43,10 +43,10 @@
 						const htmlContent = marked(markdown);
 						document.getElementById('content').innerHTML = htmlContent;
 					})
-				.catch(error => {
-					console.error('加载 Markdown 文件时出错:', error);
-					document.getElementById('content').innerHTML = '无法加载文章内容。';
-				});
+					.catch(error => {
+						console.error('加载 Markdown 文件时出错:', error);
+						document.getElementById('content').innerHTML = '无法加载文章内容。';
+					});
 			} else {
 				document.getElementById('content').innerHTML = '没有提供文章 ID。';
 			}
