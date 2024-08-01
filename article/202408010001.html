@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>2/13 - about us</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1>2/13 = 0.15384615...</h1>
+        <p>欢迎来到 <b>2/13</b>，一个致力于资源分享 & 教程的小站！</p>
+    </div>
+    <div class="topnav">
+        <a href="https:\\www.153846.top">主站</a>
+        <a href="https:\\www.153846.top/tools">小工具</a>
+        <a href="https:\\www.153846.top/aboutus">关于我们</a>
+    </div>
+    <div class="card">
+        <h1>乱码恢复指南（上）</h1>
+        <p class="smallfont">作者：Bajki-afk</p>
+        <p class="smallfont">也可在Bilibili<a href="https://www.bilibili.com/read/cv36185237">阅读本文</a></p>
+        <h2>前言</h2>
+        <p>最近发现很多人分不清各式的乱码，会用错方法试着解乱码，结果到最后浪费时间有一无所获（诚然，笔者曾经也是如此）。为了不让读者在解读乱码时没有头绪，笔者在此整理了不同种类的乱码与解决方案。</p>
+        <h2>字符编码错误</h2>
+        <p>在网上搜“如何解决乱码”，攻略中<b>几乎全部</b>（虽然笔者本人搜到的就是全部，但为了严谨还是写几乎全部吧）都是由于字符编码错误引起的。</p>
+        <p>假设一条信息的内容为“我能吞下玻璃而不伤身体”。要让它在电脑内储存，那必须有一个给“我”、“能”、“吞”、……、“身”、“体”这些字符编号的系统，也就是<b>字符编码</b>。那么自然，不同的人会使用不同的字符编码系统。
+        </p>
+        <p>我们现在关注两个字符编码系统：UTF-8与GBK。前者国际通用，后者只适用于中文简繁体。“我能吞下玻璃而不伤身体”在UTF-8中编码后结果为：</p>
+        <p>E6 88 91 E8 83 BD E5 90 9E E4 B8 8B E7 8E BB E7 92 83 E8 80 8C E4 B8 8D E4 BC A4 E8 BA AB E4 BD 93</p>
+        <p style="text-align: right;"><span class="font-size-12">*十六进制</span></p>
+        <p>也就是电脑中实际储存的信息。那么若现在电脑默认使用GBK打开文件，那么在解码时电脑就会自动使用GBK中给字符的编码来理解以上信息。E6 88在GBK中是“鎴”，91
+            E8在GBK中是“戣”，……最后，就被解码成了“鎴戣兘鍚炰笅鐜荤拑锛岃€屼笉浼よ韩浣撱€�”。这就是<b>字符编码错误</b>。为了能够让读者快速判断字符编码错误是哪两个字符编码系统所导致的，以下是笔者画的一张表格，希望能够帮到你：
+        </p>
+        <figure class="img-box img-seamless loaded" contenteditable="false" style="min-width: 628px; min-height: 91px;">
+            <div class="n-img-mask" style="width: 100%;height: 91px;">
+                <i class="iconfont icon--default-cover default-cover"></i>
+                <div class="n-img-reload" data-type="reload"></div>
+            </div>
+            <img data-src="//i0.hdslb.com/bfs/article/8b6da274f4ed8dde8823197e92e213f73546605240191947.png@1256w_182h_!web-article-pic.avif"
+                width="1672" height="241" class="normal-img" type="seamlessImage" data-index="0" data-type="preview"
+                style="width: 628px; height: 91px;"
+                src="//i0.hdslb.com/bfs/article/8b6da274f4ed8dde8823197e92e213f73546605240191947.png@1256w_182h_!web-article-pic.avif">
+        </figure>
+    </div>
+    <div class="footer">
+        <p>Copyright ©2024 <b>2/13</b></p>
+    </div>
+</body>
+
+</html>
