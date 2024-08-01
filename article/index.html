@@ -18,33 +18,28 @@
 		<a href="https://www.153846.top/tools">小工具</a>
 		<a href="https://www.153846.top/aboutus">关于我们</a>
 	</div>
-	<div class="row card" id="content"></div>
+	<div class="row card" id="markdown"></div>
 	<script>
 		const urlParam = new URLSearchParams(window.location.search);
 		const articleId = urlParam.get('p');
 
-		if (articleId) {
-			const mdFileUrl = `https://www.153846.top/article/p/${articleId}.md`;
-			fetch(mdFileUrl)
-				.then(response => {
-					if (!response.ok) {
-						throw new Error('Network response was not ok');
-					}
-					return response.text(); // 获取响应文本
-				})
-				.then(html => {
-					// 将网页内容保存到变量 mdFile
-					const mdFile = html;
-					console.log(mdFile); // 打印变量内容以确认
-					const htmlContent = marked.parse(mdFile);
-					console.log(htmlContent);
-					document.getElementById('content').innerHTML = htmlContent;
-					// 在这里可以进一步处理 mdFile 变量
-				})
-				.catch(error => {
-					console.error('There has been a problem with your fetch operation:', error);
-				});
+		if (!articleId) {
+			articleId = "default";
 		}
+		const mdFileUrl = `https://www.153846.top/article/p/${articleId}.md`;
+		fetch(mdFileUrl)
+			.then(response => {
+				if (!response.ok) {
+					throw new Error('Network response was not ok');
+				}
+				return response.text();
+			})
+			.then(html => {
+				document.getElementById('markdown').innerHTML = marked.parse(html);
+			})
+			.catch(error => {
+				console.error('There has been a problem with your fetch operation:', error);
+			});
 	</script>
 	<!--<script>
 			import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
