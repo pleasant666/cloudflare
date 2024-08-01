@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
     <meta charset="UTF-8">
     <title>Markdown 文章</title>
@@ -9,40 +10,43 @@
             font-family: Arial, sans-serif;
             margin: 20px;
         }
+
         .markdown-content {
             max-width: 800px;
             margin: auto;
         }
     </style>
 </head>
+
 <body>
     <h1>Markdown 文章</h1>
     <div class="markdown-content" id="content">加载中...</div>
 
     <script>
-    // 获取查询参数
-    const urlParams = new URLSearchParams(window.location.search);
-    const articleId = urlParams.get('p');
+        // 获取查询参数
+        const urlParams = new URLSearchParams(window.location.search);
+        const articleId = urlParams.get('p');
 
-    if (articleId) {
-        // 构建 Markdown 文件的 URL
-        const mdFileUrl = `https://www.153846.top/article/${articleId}.md`;
+        if (articleId) {
+            // 构建 Markdown 文件的 URL
+            const mdFileUrl = `https://www.153846.top/article/p/${articleId}.md`;
 
-        // 使用 Fetch API 加载 Markdown 文件
-        fetch(mdFileUrl)
-            .then(response => response.text())
-            .then(markdown => {
-                // 使用 marked 库将 Markdown 转换为 HTML
-                const htmlContent = marked(markdown);
-                document.getElementById('content').innerHTML = htmlContent;
-            })
-            .catch(error => {
-                console.error('加载 Markdown 文件时出错:', error);
-                document.getElementById('content').innerHTML = '无法加载文章内容。';
-            });
-    } else {
-        document.getElementById('content').innerHTML = '没有提供文章 ID。';
-    }
+            // 使用 Fetch API 加载 Markdown 文件
+            fetch(mdFileUrl)
+                .then(response => response.text())
+                .then(markdown => {
+                    // 使用 marked 库将 Markdown 转换为 HTML
+                    const htmlContent = marked(markdown);
+                    document.getElementById('content').innerHTML = htmlContent;
+                })
+                .catch(error => {
+                    console.error('加载 Markdown 文件时出错:', error);
+                    document.getElementById('content').innerHTML = '无法加载文章内容。';
+                });
+        } else {
+            document.getElementById('content').innerHTML = '没有提供文章 ID。';
+        }
     </script>
 </body>
+
 </html>
