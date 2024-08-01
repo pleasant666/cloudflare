@@ -1,5 +1,10 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: #3999bf;
+    padding: 10px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -62,13 +67,14 @@ a.clear:active {
 
 .leftcolumn {
     float: left;
-    width: 49%;
-    /*不要问我为什么是49%不是50%. It just worked.*/
+    width: 50%;
+    /*终于能改回50%啦啊哈哈哈哈哈我真聪明*/
 }
 
 .rightcolumn {
-    float: right;
-    width: 49%;
+    float: left;
+    width: 50%;
+    padding-left: 20px;
     background-color: #3999bf;
 }
 
