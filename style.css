@@ -47,33 +47,28 @@ a.clear:active {
     text-align: left;
 }
 
-ul {
-    border-radius: 0px 0px 4px 4px;
+.topnav {
     overflow: hidden;
     background-color: #153846;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+    border-radius: 0px 0px 4px 4px;
 }
 
-li {
+.topnav a {
     float: left;
-    border-right: 1px solid #cce6f0;
-}
-
-li:last-child {
-    border-right: none;
-}
-
-li a {
     display: block;
     color: #cce6f0;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    border-right: 1px solid #cce6f0;
 }
 
-li a:hover:not(.active) {
+.topnav a:last-child {
+    border-right: none;
+    float: right;
+}
+
+.topnav a:hover:not(.active) {
     background-color: #b3d9e8;
     color: #153846;
 }
