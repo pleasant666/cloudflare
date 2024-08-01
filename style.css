@@ -102,17 +102,17 @@ a.clear:active {
     color: #153846
 }
 
-.card code {
-    border-radius: 8px !important;
-    padding: 4px;
+.card pre {
+    border-radius: 12px !important;
+    padding: 8px;
     font-family: 'Courier New', Courier, monospace;
     background-color: #153846;
     color: #cce6f0;
 }
 
-.card pre {
-    border-radius: 16px !important;
-    padding: 8px;
+.card code {
+    border-radius: 8px !important;
+    padding: 4px;
     font-family: 'Courier New', Courier, monospace;
     background-color: #153846;
     color: #cce6f0;
