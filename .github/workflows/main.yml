@@ -3,7 +3,7 @@ name: Purge Cloudflare Cache
 on:
   push:
     branches:
-      - main  # 或你想要监控的分支
+      - main
 
 jobs:
   purge-cache:
@@ -11,6 +11,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+
+      - name: Wait for 1 minute
+        run: sleep 20
 
       - name: Purge Cloudflare Cache
         env:
