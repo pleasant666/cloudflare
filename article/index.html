@@ -41,27 +41,6 @@
 				console.error('There has been a problem with your fetch operation:', error);
 			});
 	</script>
-	<!--<script>
-			import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
-			const urlParam = new URLSearchParams(window.location.search);
-			const articleId = urlParam.get('p');
-
-			if (articleId) {
-				const mdFileUrl = `https://www.153846.top/article/p/${artivleId}.md`;
-				fetch(mdFileUrl)
-					.then(response => response.text())
-					.then(markdown => {
-						const htmlContent = marked(markdown);
-						document.getElementById('content').innerHTML = htmlContent;
-					})
-					.catch(error => {
-						console.error('加载 Markdown 文件时出错:', error);
-						document.getElementById('content').innerHTML = '无法加载文章内容。';
-					});
-			} else {
-				document.getElementById('content').innerHTML = '没有提供文章 ID。';
-			}
-		</script>-->
 </body>
 
 </html>
