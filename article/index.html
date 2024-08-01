@@ -5,32 +5,48 @@
 	<meta charset="UTF-8">
 	<title>2/13</title>
 	<link rel="stylesheet" type="text/css" href="../style.css">
-	<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-	<!--<style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-
-        .markdown-content {
-            max-width: 800px;
-            margin: auto;
-        }
-    </style>-->
 </head>
 
 <body>
+	<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 	<div class="header">
 		<h1>2/13 = 0.15384615...</h1>
 		<p>欢迎来到 <b>2/13</b>，一个致力于资源分享 & 教程的小站！</p>
 	</div>
 	<div class="topnav">
 		<a href="https://www.153846.top">主页</a>
-		<a href="tools">小工具</a>
-		<a href="aboutus">关于我们</a>
+		<a href="https://www.153846.top/tools">小工具</a>
+		<a href="https://www.153846.top/aboutus">关于我们</a>
 	</div>
-	<div class="row">
-		<script>
+	<div class="row" id="content"></div>
+	<script>
+		const urlParam = new URLSearchParams(window.location.search);
+		const articleId = urlParam.get('p');
+
+		if (articleId) {
+			const mdFileUrl = `https://www.153846.top/article/p/${articleId}.md`;
+			fetch(mdFileUrl)
+				.then(response => {
+					if (!response.ok) {
+						throw new Error('Network response was not ok');
+					}
+					return response.text(); // 获取响应文本
+				})
+				.then(html => {
+					// 将网页内容保存到变量 mdFile
+					const mdFile = html;
+					console.log(mdFile); // 打印变量内容以确认
+					const htmlContent = marked.parse(mdFile);
+					console.log(htmlContent);
+					document.getElementById('content').innerHTML = htmlContent;
+					// 在这里可以进一步处理 mdFile 变量
+				})
+				.catch(error => {
+					console.error('There has been a problem with your fetch operation:', error);
+				});
+		}
+	</script>
+	<!--<script>
 			import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
 			const urlParam = new URLSearchParams(window.location.search);
 			const articleId = urlParam.get('p');
@@ -50,8 +66,7 @@
 			} else {
 				document.getElementById('content').innerHTML = '没有提供文章 ID。';
 			}
-		</script>
-	</div>
+		</script>-->
 </body>
 
 </html>
