@@ -35,7 +35,9 @@
 				return response.text();
 			})
 			.then(html => {
-				document.getElementById('markdown').innerHTML = marked.parse(html);
+				const mdFile = marked.parse(html);
+				document.getElementById('markdown').innerHTML = mdFile;
+				console.log(mdFile);
 			})
 			.catch(error => {
 				console.error('There has been a problem with your fetch operation:', error);
