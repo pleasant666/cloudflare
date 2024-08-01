@@ -89,7 +89,8 @@ a.clear:active {
     color: #153846
 }
 
-.card pre {
+.card pre,
+code {
     font-family: 'Courier New', Courier, monospace;
     background-color: #153846;
     color: #cce6f0;
