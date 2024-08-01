@@ -2,10 +2,11 @@
 <html lang="zh">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Markdown 文章</title>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <style>
+	<meta charset="UTF-8">
+	<title>2/13</title>
+	<link rel="stylesheet" type="text/css" href="../style.css">
+	<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+	<!--<style>
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
@@ -15,38 +16,42 @@
             max-width: 800px;
             margin: auto;
         }
-    </style>
+    </style>-->
 </head>
 
 <body>
-    <h1>Markdown 文章</h1>
-    <div class="markdown-content" id="content">加载中...</div>
+	<div class="header">
+		<h1>2/13 = 0.15384615...</h1>
+		<p>欢迎来到 <b>2/13</b>，一个致力于资源分享 & 教程的小站！</p>
+	</div>
+	<div class="topnav">
+        <a href="https://www.153846.top">主页</a>
+        <a href="tools">小工具</a>
+        <a href="aboutus">关于我们</a>
+	</div>
+	<div class="row">
+		<script>
+			import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
+			const urlParam = new URLSearchParams(window.location.search);
+			const articleId = urlParam.get('p');
 
-    <script>
-        // 获取查询参数
-        const urlParams = new URLSearchParams(window.location.search);
-        const articleId = urlParams.get('p');
-
-        if (articleId) {
-            // 构建 Markdown 文件的 URL
-            const mdFileUrl = `https://www.153846.top/article/p/${articleId}.md`;
-
-            // 使用 Fetch API 加载 Markdown 文件
-            fetch(mdFileUrl)
-                .then(response => response.text())
-                .then(markdown => {
-                    // 使用 marked 库将 Markdown 转换为 HTML
-                    const htmlContent = marked(markdown);
-                    document.getElementById('content').innerHTML = htmlContent;
-                })
-                .catch(error => {
-                    console.error('加载 Markdown 文件时出错:', error);
-                    document.getElementById('content').innerHTML = '无法加载文章内容。';
-                });
-        } else {
-            document.getElementById('content').innerHTML = '没有提供文章 ID。';
-        }
-    </script>
+			if (articleId){
+				const mdFileUrl = `https://www.153846.top/article/p/${artivleId}.md`;
+				fetch(mdFileUrl)
+					.then(response => response.text())
+					.then(markdown => {
+						const htmlContent = marked(markdown);
+						document.getElementById('content').innerHTML = htmlContent;
+					})
+				.catch(error => {
+					console.error('加载 Markdown 文件时出错:', error);
+					document.getElementById('content').innerHTML = '无法加载文章内容。';
+				});
+			} else {
+				document.getElementById('content').innerHTML = '没有提供文章 ID。';
+			}
+		</script>
+	</div>
 </body>
 
 </html>
