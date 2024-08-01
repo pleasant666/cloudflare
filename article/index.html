@@ -21,7 +21,7 @@
 	<div class="row card" id="markdown"></div>
 	<script>
 		const urlParam = new URLSearchParams(window.location.search);
-		const articleId = urlParam.get('p');
+		articleId = urlParam.get('p');
 
 		if (!articleId) {
 			articleId = "default";
