@@ -14,7 +14,6 @@
 		<p>欢迎来到 <b>2/13</b>，一个致力于资源分享 & 教程的小站！</p>
 	</div>
     <ul>
-        <!--顺序：文章 小工具 关于我们-->
         <li><a href="https://www.153846.top">主站</a></li>
         <li><a class = "active" href="#">文章</a></li>
         <li><a href="https://www.153846.top/tools">小工具</a></li>
@@ -26,7 +25,9 @@
 		articleId = urlParam.get('p');
 
 		if (!articleId) {
-			articleId = "default";
+			var div = document.getElementById('default');
+			div.style.display = 'block';
+			return;
 		}
 		const mdFileUrl = `https://www.153846.top/article/p/${articleId}.md`;
 		fetch(mdFileUrl)
@@ -45,6 +46,9 @@
 				console.error('There has been a problem with your fetch operation:', error);
 			});
 	</script>
+	<div class="card" id="default"{display:none;}>
+		<h1>这里没有任何内容</h1>
+	</div>
 	<div class="footer">
 		<p>Copyright ©2024 <b>2/13</b></p>
 	</div>
