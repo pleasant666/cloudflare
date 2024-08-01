@@ -25,8 +25,9 @@
 		articleId = urlParam.get('p');
 
 		if (!articleId) {
-			var div = document.getElementById('default');
-			div.style.display = 'block';
+			var div1 = document.getElementById('default'), div2 = document.getElementById('markdown');
+			div1.style.display = 'block';
+			div2.style.display = 'none';
 			return;
 		}
 		const mdFileUrl = `https://www.153846.top/article/p/${articleId}.md`;
