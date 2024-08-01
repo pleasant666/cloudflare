@@ -13,43 +13,44 @@
 		<h1>2/13 = 0.15384615...</h1>
 		<p>欢迎来到 <b>2/13</b>，一个致力于资源分享 & 教程的小站！</p>
 	</div>
-    <ul>
-        <li><a href="https://www.153846.top">主站</a></li>
-        <li><a class = "active" href="#">文章</a></li>
-        <li><a href="https://www.153846.top/tools">小工具</a></li>
-        <li style="float: right"><a href="https://www.153846.top/aboutus">关于我们</a></li>
-    </ul>
+	<ul>
+		<li><a href="https://www.153846.top">主站</a></li>
+		<li><a class="active" href="#">文章</a></li>
+		<li><a href="https://www.153846.top/tools">小工具</a></li>
+		<li style="float: right"><a href="https://www.153846.top/aboutus">关于我们</a></li>
+	</ul>
 	<div class="card" id="markdown"></div>
+	<div class="card" id="default" style="display: none;">
+		<h1>这里没有任何内容</h1>
+	</div>
 	<script>
 		const urlParam = new URLSearchParams(window.location.search);
-		articleId = urlParam.get('p');
+		const articleId = urlParam.get('p');
+		console.log(articleId);
 
-		if (!articleId) {
+		if (articleId === null) {
 			var div1 = document.getElementById('default'), div2 = document.getElementById('markdown');
 			div1.style.display = 'block';
 			div2.style.display = 'none';
-			return;
+		} else {
+			const mdFileUrl = `https://www.153846.top/article/p/${articleId}.md`;
+			fetch(mdFileUrl)
+				.then(response => {
+					if (!response.ok) {
+						window.location.href = 'https://www.153846.top/404.html';
+					}
+					return response.text();
+				})
+				.then(html => {
+					const mdFile = marked.parse(html);
+					document.getElementById('markdown').innerHTML = mdFile;
+					console.log(mdFile);
+				})
+				.catch(error => {
+					console.error('There has been a problem with your fetch operation:', error);
+				});
 		}
-		const mdFileUrl = `https://www.153846.top/article/p/${articleId}.md`;
-		fetch(mdFileUrl)
-			.then(response => {
-				if (!response.ok) {
-					window.location.href = 'https://www.153846.top/404.html';
-				}
-				return response.text();
-			})
-			.then(html => {
-				const mdFile = marked.parse(html);
-				document.getElementById('markdown').innerHTML = mdFile;
-				console.log(mdFile);
-			})
-			.catch(error => {
-				console.error('There has been a problem with your fetch operation:', error);
-			});
 	</script>
-	<div class="card" id="default"{display:none;}>
-		<h1>这里没有任何内容</h1>
-	</div>
 	<div class="footer">
 		<p>Copyright ©2024 <b>2/13</b></p>
 	</div>
