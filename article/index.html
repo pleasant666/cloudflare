@@ -18,7 +18,7 @@
 		<a href="https://www.153846.top/tools">小工具</a>
 		<a href="https://www.153846.top/aboutus">关于我们</a>
 	</div>
-	<div class="card" id="markdown"></div>
+	<div class="row card" id="content"></div>
 	<script>
 		const urlParam = new URLSearchParams(window.location.search);
 		const articleId = urlParam.get('p');
@@ -38,7 +38,7 @@
 					console.log(mdFile); // 打印变量内容以确认
 					const htmlContent = marked.parse(mdFile);
 					console.log(htmlContent);
-					document.getElementById('markdown').innerHTML = htmlContent;
+					document.getElementById('content').innerHTML = htmlContent;
 					// 在这里可以进一步处理 mdFile 变量
 				})
 				.catch(error => {
