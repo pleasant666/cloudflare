@@ -14,62 +14,35 @@
 		<p>欢迎来到 <b>2/13</b>，一个致力于资源分享 & 教程的小站！</p>
 	</div>
 	<div class="topnav">
-		<a href="https://www.153846.top">主页</a>
+		<a href="https://www.153846.top">主站</a>
 		<a href="https://www.153846.top/tools">小工具</a>
 		<a href="https://www.153846.top/aboutus">关于我们</a>
 	</div>
-	<div class="row card" id="content"></div>
+	<div class="row card" id="markdown"></div>
 	<script>
 		const urlParam = new URLSearchParams(window.location.search);
-		const articleId = urlParam.get('p');
+		articleId = urlParam.get('p');
 
-		if (articleId) {
-			const mdFileUrl = `https://www.153846.top/article/p/${articleId}.md`;
-			fetch(mdFileUrl)
-				.then(response => {
-					if (!response.ok) {
-						throw new Error('Network response was not ok');
-					}
-					return response.text(); // 获取响应文本
-				})
-				.then(html => {
-					// 将网页内容保存到变量 mdFile
-					const mdFile = html;
-					console.log(mdFile); // 打印变量内容以确认
-					const htmlContent = marked.parse(mdFile);
-					console.log(htmlContent);
-					document.getElementById('content').innerHTML = htmlContent;
-					// 在这里可以进一步处理 mdFile 变量
-				})
-				.catch(error => {
-					console.error('There has been a problem with your fetch operation:', error);
-				});
+		if (!articleId) {
+			articleId = "default";
 		}
+		const mdFileUrl = `https://www.153846.top/article/p/${articleId}.md`;
+		fetch(mdFileUrl)
+			.then(response => {
+				if (!response.ok) {
+					window.location.href = 'https://www.153846.top/404.html';
+				}
+				return response.text();
+			})
+			.then(html => {
+				const mdFile = marked.parse(html);
+				document.getElementById('markdown').innerHTML = mdFile;
+				console.log(mdFile);
+			})
+			.catch(error => {
+				console.error('There has been a problem with your fetch operation:', error);
+			});
 	</script>
-	<!--<script>
-			import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
-			const urlParam = new URLSearchParams(window.location.search);
-			const articleId = urlParam.get('p');
-
-			if (articleId) {
-				const mdFileUrl = `https://www.153846.top/article/p/${artivleId}.md`;
-				fetch(mdFileUrl)
-					.then(response => response.text())
-					.then(markdown => {
-						const htmlContent = marked(markdown);
-						document.getElementById('content').innerHTML = htmlContent;
-					})
-					.catch(error => {
-						console.error('加载 Markdown 文件时出错:', error);
-						document.getElementById('content').innerHTML = '无法加载文章内容。';
-					});
-			} else {
-				document.getElementById('content').innerHTML = '没有提供文章 ID。';
-			}
-		</script>-->
-	<div class="footer">
-		<p>Copyright ©2024 <b>2/13</b></p>
-	</div>
 </body>
 
 </html>
