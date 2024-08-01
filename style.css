@@ -86,7 +86,6 @@ li a:hover:not(.active) {
 .leftcolumn {
     float: left;
     width: 50%;
-    /*终于能改回50%啦啊哈哈哈哈哈我真聪明*/
 }
 
 .rightcolumn {
