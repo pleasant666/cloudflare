@@ -1,0 +1,134 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #3999bf;
+    padding: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.smallfont {
+    font-size: 10px;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:active {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a.clear:hover {
+    font-weight: normal;
+    text-decoration: none;
+}
+
+a.clear:active {
+    font-weight: normal;
+    text-decoration: none;
+}
+
+.header {
+    background-color: #cce6f0;
+    padding: 20px;
+    text-align: left;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #153846;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: #cce6f0;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.topnav a:hover {
+    background-color: #cce6f0;
+    color: #153846;
+}
+
+.leftcolumn {
+    float: left;
+    width: 50%;
+    /*终于能改回50%啦啊哈哈哈哈哈我真聪明*/
+}
+
+.rightcolumn {
+    float: left;
+    width: 50%;
+    padding-left: 20px;
+    background-color: #3999bf;
+}
+
+.card {
+    background-color: #cce6f0;
+    padding: 20px;
+    margin-top: 20px;
+    color: #153846;
+}
+
+.card a {
+    color: #153846
+}
+
+.card pre,
+code {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #153846;
+    color: #cce6f0;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width: 800px) {
+
+    .leftcolumn,
+    .rightcolumn {
+        width: 100%;
+        padding: 0px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .topnav a {
+        float: none;
+        width: 100%;
+    }
+}
+
+div.withshadow:hover {
+    box-shadow: 0 0 4px 4px #276882;
+}
+
+.footer {
+    background-color: #153846;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.footer p {
+    color: #cce6f0;
+}
