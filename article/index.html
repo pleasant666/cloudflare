@@ -30,7 +30,7 @@
 		fetch(mdFileUrl)
 			.then(response => {
 				if (!response.ok) {
-					throw new Error('Network response was not ok');
+					window.location.href = 'https://www.153846.top/404.html';
 				}
 				return response.text();
 			})
