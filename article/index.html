@@ -8,7 +8,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 	<script>
 		function changeurl(articleId) {
-			history.pushState(null, '', "?p="+articleId);
+			history.pushState(null, '', "?p=" + articleId);
 			var div1 = document.getElementById('default'), div2 = document.getElementById('markdown');
 			if (articleId === null || articleId === "") {
 				div1.style.display = 'block';
@@ -51,9 +51,11 @@
 	<div class="card" id="markdown"></div>
 	<div class="card" id="default" style="display: none;">
 		<h1>这里没有任何内容</h1>
-		<label for="artID">文章ID</label>
-		<input type="text" id="artID" name="artID">
-		<button onclick="changeurl(document.getElementById('artID').value)">submit</button>
+		<!--<label for="artID">文章ID</label>-->
+		<input type="text" id="artID" name="artID" placeholder="请输入文章ID"
+			onfocus="if(placeholder=='请输入文章ID'){placeholder=''}" onblur="if(placeholder==''){placeholder='请输入文章ID'}">
+		</input>
+		<button class="button" onclick="changeurl(document.getElementById('artID').value)">submit</button>
 	</div>
 	<script>
 		const urlParam = new URLSearchParams(window.location.search);

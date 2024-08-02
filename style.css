@@ -155,3 +155,23 @@ div.withshadow:hover {
 .footer p {
     color: #cce6f0;
 }
+
+.button {
+    background-color: #153846;
+    border: none;
+    color: #cce6f0;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    border-radius: 4px;
+}
+
+input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
