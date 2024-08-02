@@ -15,8 +15,20 @@
     </div>
     <div class="card">
         <p>这个网页不存在或者已经被删除。</p>
+        <p>将在<b id="timeout">5</b><b>秒</b>后返回主站</p>
         <a href="https://www.153846.top/">点击此处返回网站主页</a>
     </div>
+    <script>
+        for (let i = 4; i >= 0; i--) {
+            (function (count) {
+                setTimeout(function () {
+                    document.getElementById("timeout").innerText = count;
+                }, (4 - count) * 1000); // 不同的延时时间
+            })(i);
+        }
+        window.location.href = "https://www.153846.top";
+    </script>
+
     <div class="footer">
         <p>Copyright ©2024 <b>2/13</b></p>
     </div>
