@@ -9,13 +9,15 @@
 	<script>
 		function changeurl(articleId) {
 			history.pushState(null, '', "?p=" + articleId);
-			var div1 = document.getElementById('default'), div2 = document.getElementById('markdown');
+			var div1 = document.getElementById('default'), div2 = document.getElementById('markdown'), a = document.getElementById('article');
 			if (articleId === null || articleId === "") {
 				div1.style.display = 'block';
 				div2.style.display = 'none';
+				a.href = '#';
 			} else {
 				div1.style.display = 'none';
 				div2.style.display = 'block';
+				a.href = 'https://www.153846.top/article';
 				const mdFileUrl = `https://www.153846.top/article/p/${articleId}.md`;
 				fetch(mdFileUrl)
 					.then(response => {
@@ -44,7 +46,7 @@
 	</div>
 	<div class="topnav">
 		<a href="https://www.153846.top">主站</a>
-		<a class="active" href="#">文章</a>
+		<a class="active" href="#" id="article">文章</a>
 		<a href="https://www.153846.top/tools">小工具</a>
 		<a href="https://www.153846.top/aboutus">关于我们</a>
 	</div>
