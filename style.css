@@ -60,7 +60,6 @@ a.clear:active {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    border-right: 1px solid #cce6f0;
 }
 
 .topnav a:last-child {
@@ -160,18 +159,19 @@ div.withshadow:hover {
     background-color: #153846;
     border: none;
     color: #cce6f0;
-    padding: 15px 32px;
+    padding: 12px 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 20px;
+    font-size: medium;
     border-radius: 4px;
 }
 
 input {
-    width: 100%;
+    width: 80%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
+    font-size: medium;
     border-radius: 4px;
 }

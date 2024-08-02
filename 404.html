@@ -13,17 +13,22 @@
         <h1>404!</h1>
         <p><b>2/13</b> - 404界面</p>
     </div>
+    <div class="topnav">
+        <a href="https://www.153846.top">主站</a>
+        <a class="active" href="#">文章</a>
+        <a href="https://www.153846.top/tools">小工具</a>
+        <a href="https://www.153846.top/aboutus">关于我们</a>
+    </div>
     <div class="card">
         <p>这个网页不存在或者已经被删除。</p>
-        <p>将在<b id="timeout">5</b><b>秒</b>后返回主站</p>
-        <a href="https://www.153846.top/">点击此处返回网站主页</a>
+        <p>将在 <b id="timeout">5</b> 秒后返回主站</p>
     </div>
     <script>
         function sleep(ms) {
             return new Promise(resolve => setTimeout(resolve, ms));
         }
         async function main() {
-            for (let i=4;i>=0;i--){
+            for (let i = 4; i >= 0; i--) {
                 await sleep(1000);
                 document.getElementById('timeout').innerText = i;
             }
