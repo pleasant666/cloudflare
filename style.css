@@ -165,6 +165,13 @@ div.withshadow:hover {
     display: inline-block;
     font-size: medium;
     border-radius: 4px;
+    border: 2px solid #153846;
+}
+
+.button:hover {
+    background-color: #cce6f0;
+    color: #153846;
+    border: 2px solid #153846;
 }
 
 input {
