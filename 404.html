@@ -19,14 +19,17 @@
         <a href="https://www.153846.top/">点击此处返回网站主页</a>
     </div>
     <script>
-        for (let i = 4; i >= 0; i--) {
-            (function (count) {
-                setTimeout(function () {
-                    document.getElementById("timeout").innerText = count;
-                }, (4 - count) * 1000); // 不同的延时时间
-            })(i);
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
         }
-        window.location.href = "https://www.153846.top";
+        async function main() {
+            for (let i=4;i>=0;i--){
+                await sleep(1000);
+                document.getElementById('timeout').innerText = i;
+            }
+            window.location.href = "https://www.153846.top";
+        }
+        main();
     </script>
 
     <div class="footer">
