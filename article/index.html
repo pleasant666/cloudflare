@@ -10,7 +10,7 @@
 		function changeurl(articleId) {
 			history.pushState(null, '', "?p="+articleId);
 			var div1 = document.getElementById('default'), div2 = document.getElementById('markdown');
-			if (articleId === null) {
+			if (articleId === null || articleId === "") {
 				div1.style.display = 'block';
 				div2.style.display = 'none';
 			} else {
