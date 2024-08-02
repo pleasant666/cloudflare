@@ -8,12 +8,14 @@
 	<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 	<script>
 		function changeurl(articleId) {
-			history.pushState(null, '', articleId);
+			history.pushState(null, '', "?p="+articleId);
+			var div1 = document.getElementById('default'), div2 = document.getElementById('markdown');
 			if (articleId === null) {
-				var div1 = document.getElementById('default'), div2 = document.getElementById('markdown');
 				div1.style.display = 'block';
 				div2.style.display = 'none';
 			} else {
+				div1.style.display = 'none';
+				div2.style.display = 'block';
 				const mdFileUrl = `https://www.153846.top/article/p/${articleId}.md`;
 				fetch(mdFileUrl)
 					.then(response => {
