@@ -50,12 +50,12 @@
 	</div>
 	<div class="card" id="markdown"></div>
 	<div class="card" id="default" style="display: none;">
-		<h1>这里没有任何内容</h1>
+		<h1>请搜索文章ID以查找文章：</h1>
 		<!--<label for="artID">文章ID</label>-->
 		<input type="text" id="artID" name="artID" placeholder="请输入文章ID"
 			onfocus="if(placeholder=='请输入文章ID'){placeholder=''}" onblur="if(placeholder==''){placeholder='请输入文章ID'}">
 		</input>
-		<button class="button" onclick="changeurl(document.getElementById('artID').value)">submit</button>
+		<button class="button" onclick="changeurl(document.getElementById('artID').value)">确认</button>
 	</div>
 	<script>
 		const urlParam = new URLSearchParams(window.location.search);
