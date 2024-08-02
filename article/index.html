@@ -53,7 +53,7 @@
 		<h1>这里没有任何内容</h1>
 		<label for="artID">文章ID</label>
 		<input type="text" id="artID" name="artID">
-		<button onclick="changeurl(artID.artID)">submit</button>
+		<button onclick="changeurl(document.getElementById('artID'))">submit</button>
 	</div>
 	<script>
 		const urlParam = new URLSearchParams(window.location.search);
