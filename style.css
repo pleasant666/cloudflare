@@ -63,7 +63,6 @@ a.clear:active {
 }
 
 .topnav a:last-child {
-    border-right: none;
     float: right;
 }
 
